@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rekapan Kehadiran Siswa X TKJ</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Kas Kelas X TKJ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Rekapan Kehadiran Siswa Kelas X TKJ</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama Siswa</th>
-        <th>Kehadiran</th>
-      </tr>
-    </thead>
-    <tbody id="siswa-table">
-      <!-- Data siswa akan diisi oleh JavaScript -->
-    </tbody>
-  </table>
+  <header>
+    <div class="header-content">
+      <img src="logo-smk.png" alt="Logo SMK" class="logo">
+      <div class="title">
+        <h1>SMK NEGERI 1 BANDUNG</h1>
+        <h2>Sistem Kas Kelas X TKJ</h2>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- === BAGIAN PEMASUKAN === -->
+    <section class="kas-masuk">
+      <h2>Kas Masuk (Iuran Siswa)</h2>
+      <label for="namaSiswa">Nama Siswa:</label>
+      <select id="namaSiswa"></select>
+
+      <label for="tanggalKas">Tanggal:</label>
+      <input type="date" id="tanggalKas">
+
+      <label for="jumlahKas">Jumlah Setoran (Rp):</label>
+      <input type="number" id="jumlahKas" placeholder="Masukkan nominal...">
+
+      <button id="tambahKas">Tambah Setoran</button>
+    </section>
+
+    <section class="daftar-kas">
+      <h2>Daftar Kas Masuk</h2>
+      <table id="tabelKasMasuk">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Tanggal</th>
+            <th>Jumlah (Rp)</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="bodyKasMasuk"></tbody>
+      </table>
+    </section>
+
+    <!-- === BAGIAN PENGELUARAN === -->
+    <section class="kas-keluar">
+      <h2>Pengeluaran Kas</h2>
+      <label for="tanggalKeluar">Tanggal:</label>
+      <input type="date" id="tanggalKeluar">
+
+      <label for="keteranganKeluar">Keterangan:</label>
+      <input type="text" id="keteranganKeluar" placeholder="Contoh: Beli Spidol">
+
+      <label for="jumlahKeluar">Jumlah (Rp):</label>
+      <input type="number" id="jumlahKeluar" placeholder="Masukkan nominal...">
+
+      <button id="tambahKeluar">Tambah Pengeluaran</button>
+
+      <table id="tabelKasKeluar">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>Keterangan</th>
+            <th>Jumlah (Rp)</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="bodyKasKeluar"></tbody>
+      </table>
+    </section>
+
+    <!-- === REKAP === -->
+    <section class="rekap">
+      <h2>Rekap Keuangan Kelas</h2>
+      <div id="rekapContainer"></div>
+      <button id="lihatRekap">Lihat Rekap Keuangan</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 SMK Negeri 1 Bandung | Jurusan Teknik Komputer & Jaringan</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
